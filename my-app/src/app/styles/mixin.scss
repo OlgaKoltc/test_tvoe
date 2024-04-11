@@ -1,0 +1,12 @@
+@import "./variables.module.scss";
+
+@mixin btn($width, $height, $bgcolor) {
+  width: $width;
+  height: $height;
+  color: $primary-color;
+  background: $bgcolor;
+  size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+}
