@@ -1,0 +1,74 @@
+@import "../../../src/app/styles/mixin.scss";
+@import "../../../src/app/styles/variables.module.scss";
+
+header {
+  width: 960px;
+  height: 92px;
+
+  .container {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 896px;
+    gap: 16px;
+
+    .header_logo img {
+      width: 144px;
+      height: 50px;
+    }
+    .header__search {
+      width: 379px;
+      height: 68px;
+
+      display: flex;
+      align-items: center;
+
+      input {
+        position: relative;
+        width: 300px;
+        height: 40px;
+        background-color: rgba(9, 9, 12, 1);
+        border: none;
+      }
+      img {
+        position: relative;
+        right: 25px;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.3;
+        }
+      }
+    }
+    .box_btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 341px;
+      height: 44px;
+      gap: 16px;
+      .header__btn_grad {
+        @include btn(
+          129px,
+          44px,
+          linear-gradient(
+            to right,
+            rgba(106, 17, 203, 1),
+            rgba(37, 117, 252, 1)
+          )
+        );
+      }
+
+      .header__btn_grey {
+        @include btn(110px, 44px, rgba(255, 255, 255, 0.05));
+      }
+      .login {
+        font-size: 24px;
+        color: rgba(186, 186, 186, 1);
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}

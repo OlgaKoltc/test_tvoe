@@ -9,4 +9,7 @@
   border-radius: 12px;
   cursor: pointer;
   border: none;
+  &:hover {
+    opacity: 0.5;
+  }
 }

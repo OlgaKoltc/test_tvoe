@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+//гугл шрифты
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
 import "./styles/globals.scss";
 // import variables from "./styles/variables.module.scss";
 
