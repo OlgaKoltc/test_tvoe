@@ -1,11 +1,13 @@
+"use client";
 import style from "./page.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import Swiper from "swiper";
-import SwiperSlide from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/pagination";
 
-export default function Home() {
+const Home = () => {
   const catalog = [
     {
       id: 1,
@@ -63,7 +65,6 @@ export default function Home() {
 
   return (
     <>
-      {" "}
       <article className={style.trailer_section}>
         <div className={style.trailer}>
           <Link href="`/${filmId}`">
@@ -90,25 +91,35 @@ export default function Home() {
       </article>
       <article className={style.catalog}>
         <h1>Новинки</h1>
-        <Swiper spaceBetween={10} slidesPerView={4}>
-          {catalog.map((film) => (
-            <SwiperSlide key={film.id}>
-              <div className={style.reiting}>{film.reiting}</div>
-              <Image
-                className={style.poster}
-                src={film.poster.path}
-                alt={film.poster.alt}
-                width={film.poster.width}
-                height={film.poster.height}
-              ></Image>
-              <div className={style.info}>
-                <span className={style.name}>{film.title}</span>
-                <span className={style.time}>{film.info}</span>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className={style.swiper_wrapper}>
+          <Swiper
+            className={style.swiper}
+            slidesPerView={4}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+          >
+            {catalog.map((film) => (
+              <SwiperSlide key={film.id}>
+                <div className={style.reiting}>{film.reiting}</div>
+                <Image
+                  className={style.poster}
+                  src={film.poster.path}
+                  alt={film.poster.alt}
+                  width={film.poster.width}
+                  height={film.poster.height}
+                ></Image>
+                <div className={style.info}>
+                  <span className={style.name}>{film.title}</span>
+                  <span className={style.time}>{film.info}</span>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </article>
     </>
   );
-}
+};
+export default Home;

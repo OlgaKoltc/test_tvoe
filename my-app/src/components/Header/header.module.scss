@@ -10,17 +10,31 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 896px;
+    max-width: 896px;
     gap: 16px;
+    @media screen and (max-width: 769px) {
+      width: 375px;
+      height: 72px;
+      .header__btn_box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 152px;
+        height: 44px;
+      }
+    }
 
     .header_logo img {
       width: 144px;
       height: 50px;
+      @media screen and (max-width: 769px) {
+        width: 92px;
+        height: 33px;
+      }
     }
     .header__search {
-      width: 379px;
+      max-width: 379px;
       height: 68px;
-
       display: flex;
       align-items: center;
 
@@ -30,13 +44,28 @@ header {
         height: 40px;
         background-color: rgba(9, 9, 12, 1);
         border: none;
+        @media screen and (max-width: 769px) {
+          display: none;
+        }
       }
-      img {
-        position: relative;
-        right: 25px;
+      .search_btn {
+        background-image: url("/assets/icons/Search.svg");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-color: rgba(9, 9, 12, 1);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: none;
         cursor: pointer;
         &:hover {
           opacity: 0.3;
+        }
+        @media screen and (max-width: 769px) {
+          position: static;
+          background-color: rgba(255, 255, 255, 0.05);
+          width: 44px;
+          height: 44px;
         }
       }
     }
@@ -47,6 +76,9 @@ header {
       width: 341px;
       height: 44px;
       gap: 16px;
+      @media screen and (max-width: 769px) {
+        width: 100px;
+      }
       .header__btn_grad {
         @include btn(
           129px,
@@ -57,16 +89,41 @@ header {
             rgba(37, 117, 252, 1)
           )
         );
+        @media screen and (max-width: 769px) {
+          background-image: url("/assets/icons/bang.svg");
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-color: rgba(255, 255, 255, 0.05);
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          text-indent: -9999px;
+          white-space: nowrap;
+        }
       }
 
       .header__btn_grey {
         @include btn(110px, 44px, rgba(255, 255, 255, 0.05));
+        @media screen and (max-width: 769px) {
+          display: none;
+        }
       }
       .login {
         font-size: 24px;
         color: rgba(186, 186, 186, 1);
         &:hover {
           color: white;
+        }
+        @media screen and (max-width: 769px) {
+          background-image: url("/assets/icons/account.svg");
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-color: rgba(255, 255, 255, 0.05);
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          text-indent: -9999px;
+          white-space: nowrap;
         }
       }
     }

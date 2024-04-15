@@ -1,10 +1,7 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
-  max-width: 100%;
-  width: var(--max-width);
-}
 .trailer_section {
+  @media screen and (max-width: 769px) {
+    width: 375px;
+  }
   .trailer {
     .trailer__video {
       position: relative;
@@ -13,6 +10,10 @@
       .video img {
         position: relative;
         opacity: 1;
+        @media screen and (max-width: 769px) {
+          width: 375px;
+          height: 300px;
+        }
 
         img::before {
           position: absolute;
@@ -39,4 +40,14 @@
       }
     }
   }
+}
+
+.swiper {
+  margin: 0 -64px !important;
+  padding: 0 64px !important;
+  display: flex;
+  width: auto;
+  max-width: unset;
+  flex-wrap: nowrap;
+  overflow: initial !important;
 }

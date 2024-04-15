@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-//гугл шрифты
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import "./styles/globals.scss";
-// import variables from "./styles/variables.module.scss";
 
 export const metadata: Metadata = {
   title: "TVOЁ",
